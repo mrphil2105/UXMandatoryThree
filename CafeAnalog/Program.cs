@@ -1,3 +1,4 @@
+using CafeAnalog;
 using CafeAnalog.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,11 @@ if (builder.Environment.IsDevelopment())
 {
     mvcBuilder.AddRazorRuntimeCompilation();
 }
+
+#if DEBUG
+services.AddHostedService(p => new NpmWatchHostedService(p.GetRequiredService<IWebHostEnvironment>()
+    .IsDevelopment(), p.GetRequiredService<ILogger<NpmWatchHostedService>>()));
+#endif
 
 var app = builder.Build();
 

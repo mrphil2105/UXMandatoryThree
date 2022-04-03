@@ -1,0 +1,15 @@
+{
+  "name": "cafe-analog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prebuild:css": "rm -rf wwwroot/css",
+    "build:css": "sass --style compressed --no-source-map Styles:wwwroot/css",
+    "postbuild:css": "postcss wwwroot/css/site.css --use autoprefixer --replace"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.11"
+  }
+}
