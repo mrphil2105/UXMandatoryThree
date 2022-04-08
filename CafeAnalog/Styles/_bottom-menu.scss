@@ -1,0 +1,41 @@
+.bottom-menu {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    background-color: #2e2222;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+
+            a {
+                display: block;
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+                font-size: 1.5rem;
+
+                &:hover {
+                    background-color: #241b1b;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .bottom-menu {
+        display: none;
+    }
+}

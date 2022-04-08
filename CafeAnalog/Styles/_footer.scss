@@ -1,0 +1,16 @@
+footer {
+    margin-bottom: 3.75rem;
+    padding: 1.5rem 0.5rem;
+    background-color: #333;
+
+    .fa-brands {
+        margin-right: 0.5rem;
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    footer {
+        margin-bottom: 0;
+    }
+}

@@ -23,3 +23,9 @@ $h1-font-size: 3.5rem;
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
+
+@import "main";
+@import "footer";
+@import "top";
+@import "top-menu";
+@import "bottom-menu";
