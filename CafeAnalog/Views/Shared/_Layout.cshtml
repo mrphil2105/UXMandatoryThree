@@ -13,6 +13,46 @@
 </head>
 <body>
 
+<div id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-8 d-flex align-items-center">
+                <div>
+                    <a class="top-heading" asp-controller="Home" asp-action="Index">Caf&#x00e9; Analog</a>
+                    <span class="open-status">&Oslash;pen</span>
+                </div>
+                <div class="top-menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                                Shop
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-ticket"></i>
+                                Inventory
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-ranking-star"></i>
+                                Leaderboard
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-4">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <main>
     @RenderBody()
 </main>
