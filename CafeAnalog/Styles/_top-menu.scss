@@ -27,7 +27,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $query-min-width) {
     .top-menu {
         display: inline-block;
     }

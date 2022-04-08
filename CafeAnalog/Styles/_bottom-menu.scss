@@ -34,7 +34,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $query-min-width) {
     .bottom-menu {
         display: none;
     }

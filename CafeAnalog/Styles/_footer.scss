@@ -9,7 +9,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $query-min-width) {
     footer {
         margin-bottom: 0;
     }
