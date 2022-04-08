@@ -24,6 +24,10 @@ $h1-font-size: 3.5rem;
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
 
+// Custom variables go below this comment.
+$top-bg: #3a280b;
+$bottom-menu-bg: #2e2222;
+
 @import "main";
 @import "footer";
 @import "top";

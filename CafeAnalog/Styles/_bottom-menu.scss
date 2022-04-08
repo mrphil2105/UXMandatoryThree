@@ -6,7 +6,7 @@
     right: 0;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
-    background-color: #2e2222;
+    background-color: $bottom-menu-bg;
 
     ul {
         display: flex;
@@ -27,7 +27,7 @@
                 font-size: 1.5rem;
 
                 &:hover {
-                    background-color: #241b1b;
+                    background-color: shade-color($bottom-menu-bg, 20%);
                 }
             }
         }

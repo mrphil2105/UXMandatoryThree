@@ -16,7 +16,7 @@
                 text-decoration: none;
 
                 &:hover {
-                    background-color: #2e2008;
+                    background-color: shade-color($top-bg, 20%);
                 }
 
                 i {
