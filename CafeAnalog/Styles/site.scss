@@ -1,6 +1,16 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // Default variable overrides go below this comment.
+$body-bg: #654f4f;
+$body-color: #fff;
+
+$font-family-sans-serif: "Rubik", sans-serif;
+
+$link-color: #fff;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+$h1-font-size: 3.5rem;
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
