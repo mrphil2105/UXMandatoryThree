@@ -3,6 +3,7 @@
 // Default variable overrides go below this comment.
 $body-bg: #654f4f;
 $body-color: #fff;
+$primary: #51a71c;
 
 $font-family-sans-serif: "Rubik", sans-serif;
 
@@ -11,6 +12,8 @@ $link-decoration: none;
 $link-hover-decoration: underline;
 
 $h1-font-size: 3.5rem;
+
+$text-muted: #dee2e6;
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
@@ -22,6 +25,8 @@ $h1-font-size: 3.5rem;
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/forms";
 @import "../node_modules/bootstrap/scss/helpers";
 
 // Custom variables go below this comment.
