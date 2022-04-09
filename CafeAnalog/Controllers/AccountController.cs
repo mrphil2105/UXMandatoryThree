@@ -53,4 +53,37 @@ public class AccountController : Controller
 
         return View(model);
     }
+
+    public IActionResult Login(string? returnUrl = null)
+    {
+        var model = new LoginModel { ReturnUrl = returnUrl };
+
+        return View(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Login(LoginModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.IsPersistent, false);
+
+        if (result.Succeeded)
+        {
+            if (Url.IsLocalUrl(model.ReturnUrl))
+            {
+                return Redirect(model.ReturnUrl);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        ModelState.AddModelError(string.Empty, "The username or password is incorrect.");
+
+        return View(model);
+    }
 }
