@@ -19,7 +19,19 @@ $h1-font-size: 3.5rem;
 
 $text-muted: #dee2e6;
 
-$form-check-input-border: 1px solid #ced4da;
+$btn-padding-x: 1rem;
+$btn-padding-y: 0.5rem;
+$btn-font-weight: 700;
+
+$input-padding-x: 1rem;
+$input-border-radius: 2.5rem;
+$input-border-color: #927979;
+$input-bg: #f1f0f0;
+$input-color: #333;
+$input-placeholder-color: shade-color(#dbcfcf, 30%);
+
+$form-check-input-width: 1.5em;
+$form-check-input-border: $border-width solid $input-border-color;
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
