@@ -72,3 +72,13 @@ $query-min-width: 768px;
         color: #333;
     }
 }
+
+.validation-summary-errors {
+    padding: 0.5rem 0.25rem 1rem;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
