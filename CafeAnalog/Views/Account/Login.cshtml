@@ -4,7 +4,7 @@
     ViewData["Title"] = "Log in";
 }
 
-<div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-9 mx-auto">
+<div class="container form-container">
     <h1>Log in</h1>
 
     <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@Model.ReturnUrl">
@@ -23,6 +23,6 @@
             <input asp-for="IsPersistent" class="form-check-input" />
         </div>
 
-        <button type="submit" class="btn btn-primary">Log in</button>
+        <button type="submit" class="btn btn-secondary">Log in</button>
     </form>
 </div>
