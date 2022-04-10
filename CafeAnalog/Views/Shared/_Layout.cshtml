@@ -1,3 +1,7 @@
+@using CafeAnalog.Data
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> _signInManager
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,7 +20,7 @@
 <div id="top">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-8 d-flex align-items-center">
+            <div class="col-md-9 col-7 d-flex align-items-center">
                 <div>
                     <a class="top-heading" asp-controller="Home" asp-action="Index">Caf&#x00e9; Analog</a>
                     <span class="open-status">&Oslash;pen</span>
@@ -44,8 +48,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2 col-4 d-flex align-items-center justify-content-end">
-                <a class="btn btn-secondary" asp-controller="Account" asp-action="Login">Log in</a>
+            <div class="col-md-3 col-5 d-flex align-items-center justify-content-end">
+                @if (_signInManager.IsSignedIn(User))
+                {
+                    <form asp-controller="Account" asp-action="Logout">
+                        <button type="submit" class="btn btn-secondary">Log out</button>
+                    </form>
+                }
+                else
+                {
+                    <a class="btn btn-secondary" asp-controller="Account" asp-action="Login">Log in</a>
+                }
             </div>
         </div>
     </div>
