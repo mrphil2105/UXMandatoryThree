@@ -5,12 +5,12 @@ namespace CafeAnalog.Models;
 public class RegisterModel
 {
     [Required]
-    [MaxLength(100)]
+    [MaxLength(25)]
     [Display(Prompt = "First Name")]
     public string? FirstName { get; init; }
 
     [Required]
-    [MaxLength(100)]
+    [MaxLength(25)]
     [Display(Prompt = "Last Name")]
     public string? LastName { get; init; }
 
