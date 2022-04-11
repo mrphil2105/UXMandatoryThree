@@ -6,12 +6,12 @@ public class RegisterModel
 {
     [Required]
     [MaxLength(100)]
-    [Display(Prompt = "First Name")]
+    [Display(Name = "First Name", Prompt = "First Name")]
     public string? FirstName { get; init; }
 
     [Required]
     [MaxLength(100)]
-    [Display(Prompt = "Last Name")]
+    [Display(Name = "Last Name", Prompt = "Last Name")]
     public string? LastName { get; init; }
 
     [Required]
@@ -20,7 +20,7 @@ public class RegisterModel
     public string? Email { get; init; }
 
     [Phone]
-    [Display(Prompt = "Mobile Number")]
+    [Display(Name = "Mobile Number", Prompt = "Mobile Number")]
     public string? MobileNumber { get; init; }
 
     [Required]
@@ -30,6 +30,6 @@ public class RegisterModel
 
     [DataType(DataType.Password)]
     [Compare(nameof(Password))]
-    [Display(Prompt = "Confirm Password")]
+    [Display(Name = "Confirm Password", Prompt = "Confirm Password")]
     public string? PasswordConfirmation { get; init; }
 }
