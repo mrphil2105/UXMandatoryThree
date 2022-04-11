@@ -5,6 +5,7 @@ $body-bg: #654f4f;
 $body-color: #ddd;
 $primary: #51a71c;
 $secondary: #f1f0f0;
+$danger: #ff4859;
 
 $border-radius: 0.5rem;
 $border-width: 3px;
@@ -78,5 +79,9 @@ $query-min-width: 992px;
         list-style-type: none;
         margin: 0;
         padding: 0;
+
+        li {
+            color: $danger;
+        }
     }
 }
