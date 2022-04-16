@@ -15,6 +15,7 @@ services.AddDefaultIdentity<AppUser>(o =>
         o.Password.RequireNonAlphanumeric = false;
     })
     .AddEntityFrameworkStores<AppDbContext>();
+services.ConfigureApplicationCookie(o => o.LoginPath = "/Account/Login");
 
 var mvcBuilder = services.AddControllersWithViews();
 
