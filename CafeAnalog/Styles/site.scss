@@ -31,6 +31,8 @@ $input-placeholder-color: shade-color(#dbcfcf, 30%);
 $form-check-input-width: 1.5em;
 $form-check-input-border: $border-width solid $input-border-color;
 
+$modal-content-color: #333;
+
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
@@ -43,6 +45,8 @@ $form-check-input-border: $border-width solid $input-border-color;
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/close";
 @import "../node_modules/bootstrap/scss/helpers";
 
 // Custom variables go below this comment.

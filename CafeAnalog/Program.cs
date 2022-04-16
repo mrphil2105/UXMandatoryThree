@@ -17,6 +17,8 @@ services.AddDefaultIdentity<AppUser>(o =>
     .AddEntityFrameworkStores<AppDbContext>();
 services.ConfigureApplicationCookie(o => o.LoginPath = "/Account/Login");
 
+services.AddAntiforgery(o => o.HeaderName = "X-XSRF-TOKEN");
+
 var mvcBuilder = services.AddControllersWithViews();
 
 if (builder.Environment.IsDevelopment())
