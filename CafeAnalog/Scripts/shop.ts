@@ -19,4 +19,27 @@
             modal.show();
         });
     });
+
+    document.getElementById("buy-submit").addEventListener("click", async () => {
+        const response = await fetch("/Shop/Buy", {
+            method: "POST",
+            mode: "same-origin",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "X-XSRF-TOKEN": (<HTMLInputElement>document.getElementsByName("__RequestVerificationToken")[0]).value
+            },
+            body: JSON.stringify(itemId)
+        });
+
+        if (response.redirected) {
+            console.log("Redirected!");
+            window.location.href = response.url;
+            return;
+        }
+
+        const message = await response.text();
+        buyResponse.classList.remove("d-none");
+        buyResponse.innerText = message;
+    });
 })();
