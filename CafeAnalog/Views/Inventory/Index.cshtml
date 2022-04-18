@@ -1,0 +1,26 @@
+@model List<InventoryTicketModel>
+
+@{
+    ViewData["Title"] = "Inventory";
+}
+
+@Html.AntiForgeryToken()
+
+<div class="container">
+    <div class="inventory">
+        <h1 class="items-heading">Inventory</h1>
+
+        <div class="row g-0">
+            @foreach (var ticket in Model)
+            {
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="item" data-id="@ticket.Id" data-name="@ticket.Name">
+                        <span>@ticket.Name</span>
+                        <div class="ticket-count">@ticket.Count</div>
+                        <button class="btn btn-primary">Use</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
