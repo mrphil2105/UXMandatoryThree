@@ -1,0 +1,10 @@
+namespace CafeAnalog.Models;
+
+public class InventoryTicketModel
+{
+    public int Id { get; init; }
+
+    public string? Name { get; init; }
+
+    public int Count { get; init; }
+}
