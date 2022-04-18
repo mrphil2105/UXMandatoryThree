@@ -8,6 +8,7 @@
     "postbuild:css": "postcss wwwroot/css/site.css --use autoprefixer --replace"
   },
   "dependencies": {
+    "@types/bootstrap": "^5.1.9",
     "bootstrap": "^5.1.3"
   },
   "devDependencies": {

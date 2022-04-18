@@ -15,6 +15,9 @@ services.AddDefaultIdentity<AppUser>(o =>
         o.Password.RequireNonAlphanumeric = false;
     })
     .AddEntityFrameworkStores<AppDbContext>();
+services.ConfigureApplicationCookie(o => o.LoginPath = "/Account/Login");
+
+services.AddAntiforgery(o => o.HeaderName = "X-XSRF-TOKEN");
 
 var mvcBuilder = services.AddControllersWithViews();
 

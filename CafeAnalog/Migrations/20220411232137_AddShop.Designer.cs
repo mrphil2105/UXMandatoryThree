@@ -3,6 +3,7 @@ using System;
 using CafeAnalog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CafeAnalog.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220411232137_AddShop")]
+    partial class AddShop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
@@ -24,9 +26,6 @@ namespace CafeAnalog.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Balance")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -92,31 +91,6 @@ namespace CafeAnalog.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("CafeAnalog.Data.InventoryTicket", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ItemId")
-                        .IsUnique();
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("InventoryTickets");
                 });
 
             modelBuilder.Entity("CafeAnalog.Data.ShopCategory", b =>
@@ -297,23 +271,6 @@ namespace CafeAnalog.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CafeAnalog.Data.InventoryTicket", b =>
-                {
-                    b.HasOne("CafeAnalog.Data.ShopItem", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CafeAnalog.Data.AppUser", "User")
-                        .WithMany("Tickets")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Item");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("CafeAnalog.Data.ShopItem", b =>
                 {
                     b.HasOne("CafeAnalog.Data.ShopCategory", "Category")
@@ -374,11 +331,6 @@ namespace CafeAnalog.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CafeAnalog.Data.AppUser", b =>
-                {
-                    b.Navigation("Tickets");
                 });
 
             modelBuilder.Entity("CafeAnalog.Data.ShopCategory", b =>
