@@ -6,7 +6,7 @@
 
     let itemId = -1;
 
-    Array.from(document.getElementsByClassName("shop-item")).forEach(shopItem => {
+    Array.from(document.getElementsByClassName("item")).forEach(shopItem => {
         const id = shopItem.getAttribute("data-id");
         const name = shopItem.getAttribute("data-name");
         const price = shopItem.getAttribute("data-price");

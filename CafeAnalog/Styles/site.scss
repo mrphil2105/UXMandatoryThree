@@ -54,6 +54,9 @@ $modal-content-color: #333;
 $top-bg: #3a280b;
 $bottom-menu-bg: #2e2222;
 
+$item-bg: #f6b26b;
+$item-color: #361c01;
+
 $query-min-width: 992px;
 
 @import "main";
@@ -61,6 +64,7 @@ $query-min-width: 992px;
 @import "top";
 @import "top-menu";
 @import "bottom-menu";
+@import "items";
 @import "shop";
 
 .form-container {
