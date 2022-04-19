@@ -9,6 +9,12 @@ public class AppDbContext : IdentityDbContext<AppUser>
     {
     }
 
+    public DbSet<ShopItem> ShopItems { get; set; } = null!;
+
+    public DbSet<ShopCategory> ShopCategories { get; set; } = null!;
+
+    public DbSet<InventoryTicket> InventoryTickets { get; set; } = null!;
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -24,5 +30,31 @@ public class AppDbContext : IdentityDbContext<AppUser>
             .Property(u => u.LastName)
             .IsRequired()
             .HasMaxLength(100);
+
+        // Shop
+
+        builder.Entity<ShopItem>()
+            .Property(i => i.Name)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Entity<ShopItem>()
+            .HasIndex(i => i.Name)
+            .IsUnique();
+
+        builder.Entity<ShopCategory>()
+            .Property(c => c.Name)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Entity<ShopCategory>()
+            .HasIndex(c => c.Name)
+            .IsUnique();
+
+        // Inventory
+
+        builder.Entity<InventoryTicket>()
+            .HasIndex(t => t.ItemId)
+            .IsUnique();
     }
 }

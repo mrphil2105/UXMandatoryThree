@@ -35,7 +35,8 @@ public class AccountController : Controller
             LastName = model.LastName!,
             UserName = model.Email,
             Email = model.Email,
-            PhoneNumber = model.MobileNumber!
+            PhoneNumber = model.MobileNumber!,
+            Balance = 100 // Free money, yay!
         };
         var result = await _userManager.CreateAsync(user, model.Password);
 

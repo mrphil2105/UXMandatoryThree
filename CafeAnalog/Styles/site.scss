@@ -5,6 +5,7 @@ $body-bg: #654f4f;
 $body-color: #ddd;
 $primary: #51a71c;
 $secondary: #f1f0f0;
+$danger: #ff4859;
 
 $border-radius: 0.5rem;
 $border-width: 3px;
@@ -31,6 +32,8 @@ $input-placeholder-color: shade-color(#dbcfcf, 30%);
 $form-check-input-width: 1.5em;
 $form-check-input-border: $border-width solid $input-border-color;
 
+$modal-content-color: #333;
+
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
@@ -43,6 +46,8 @@ $form-check-input-border: $border-width solid $input-border-color;
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/close";
 @import "../node_modules/bootstrap/scss/helpers";
 
 // Custom variables go below this comment.
@@ -56,6 +61,7 @@ $query-min-width: 992px;
 @import "top";
 @import "top-menu";
 @import "bottom-menu";
+@import "shop";
 
 .form-container {
     margin-left: auto;
@@ -78,7 +84,10 @@ $query-min-width: 992px;
         list-style-type: none;
         margin: 0;
         padding: 0;
-        color: $danger;
-        font-weight: bold;
+
+        li {
+            color: $danger;
+            font-weight: 500;
+        }
     }
 }
