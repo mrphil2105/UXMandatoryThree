@@ -21,6 +21,13 @@
         });
     });
 
+    document.getElementById("slider-close").addEventListener("click", () => {
+        sliderInput.value = "0";
+        sliderInput.classList.remove("d-none");
+        sliderConfirmation.classList.add("d-none");
+        slider.classList.add("d-none");
+    });
+
     sliderInput.addEventListener("change", async () => {
         const value = parseInt(sliderInput.value);
 
