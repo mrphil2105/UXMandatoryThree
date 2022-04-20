@@ -54,6 +54,16 @@
         if (response.ok) {
             sliderInput.classList.add("d-none");
             sliderConfirmation.classList.remove("d-none");
+
+            const ticketCount = document.getElementById(`ticket-count-${ticketId}`);
+            const count = parseInt(ticketCount.innerText);
+
+            if (count === 1) {
+                // No more tickets, remove the element from the DOM tree.
+                ticketCount.parentElement.parentElement.remove();
+            } else {
+                ticketCount.innerText = String(count - 1);
+            }
         } else {
             // Showing alerts is a bad user experience, but we use it here for the sake of simplicity.
             alert("Something went wrong when attempting to use ticket.");
