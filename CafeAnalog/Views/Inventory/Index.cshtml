@@ -24,3 +24,19 @@
         </div>
     </div>
 </div>
+
+<div id="slider" class="d-none">
+    <div id="slider-container">
+        <p>You are about to use a ticket for <strong class="item-name"></strong>.</p>
+        <p>Swipe the slider below to confirm:</p>
+        <div id="slider-status">
+            <input type="range" id="slider-input" value="0" />
+            <h5 id="slider-confirmation" class="d-none mb-0 text-center">Thanks for redeeming your ticket for <span class="item-name"></span>!</h5>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script asp-append-version="true" src="~/js/inventory.js"></script>
+}

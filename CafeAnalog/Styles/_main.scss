@@ -3,7 +3,7 @@ main {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 1rem 1rem 0 0;
-    background-color: #654f4f;
+    background-color: $main-bg;
 
     &::before {
         content: "";
