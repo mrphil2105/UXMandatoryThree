@@ -20,7 +20,8 @@ public class InventoryController : Controller
         var tickets = await _dbContext.InventoryTickets.Include(t => t.Item)
             .ToListAsync();
 
-        var ticketModels = tickets.Select(t => new InventoryTicketModel { Name = t.Item.Name, Count = t.Count })
+        var ticketModels = tickets
+            .Select(t => new InventoryTicketModel { Id = t.Id, Name = t.Item.Name, Count = t.Count })
             .ToList();
 
         return View(ticketModels);
