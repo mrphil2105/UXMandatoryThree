@@ -16,6 +16,7 @@
             itemId = parseInt(id);
             modalItemName.innerText = name;
             modalItemPrice.innerText = price;
+            buyResponse.classList.add("d-none");
             modal.show();
         });
     });
@@ -39,7 +40,7 @@
         }
 
         const message = await response.text();
-        buyResponse.classList.remove("d-none");
         buyResponse.innerText = message;
+        buyResponse.classList.remove("d-none");
     });
 })();
