@@ -33,6 +33,13 @@ public class ShopController : Controller
         return View(categoryModels);
     }
 
+    // Endpoint that redirects a user to the shop page after log in (because return url is /Shop/Buy).
+    [Authorize]
+    public IActionResult Buy()
+    {
+        return RedirectToAction("Index");
+    }
+
     [HttpPost]
     [Authorize]
     [ValidateAntiForgeryToken]

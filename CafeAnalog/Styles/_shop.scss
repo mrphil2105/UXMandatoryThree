@@ -2,52 +2,9 @@
     padding: 0.5rem;
     text-align: center;
 
-    .shop-label {
-        margin-top: 0.5rem;
-        margin-bottom: 2rem;
-        font-weight: 900;
-        text-transform: uppercase;
-    }
-
     .shop-category {
         margin-top: 0.5rem;
         font-weight: 700;
         text-transform: uppercase;
-    }
-
-    .shop-item {
-        position: relative;
-        margin: 0.5rem 0.5rem 3rem;
-        padding: 3rem 1rem;
-        border-radius: 1rem;
-        background-color: #f6b26b;
-        color: #361c01;
-
-        span {
-            font-size: 1.75rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .buy-button {
-            position: absolute;
-            bottom: -1.25rem;
-            left: 0;
-            right: 0;
-            width: 6rem;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            border-radius: 1.375rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-    }
-}
-
-@media (min-width: $query-min-width) {
-    .shop .shop-item span {
-        font-size: 2rem;
     }
 }

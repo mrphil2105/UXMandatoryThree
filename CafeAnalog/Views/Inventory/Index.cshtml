@@ -1,0 +1,50 @@
+@model List<InventoryTicketModel>
+
+@{
+    ViewData["Title"] = "Inventory";
+}
+
+@Html.AntiForgeryToken()
+
+<div class="container">
+    <div class="inventory">
+        <h1 class="items-heading">Inventory</h1>
+
+        <div class="row g-0">
+            @foreach (var ticket in Model)
+            {
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="item" data-id="@ticket.Id" data-name="@ticket.Name">
+                        <span>@ticket.Name</span>
+                        <div id="ticket-count-@ticket.Id" class="ticket-count">@ticket.Count</div>
+                        <button class="btn btn-primary">Use</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="slider" class="d-none">
+    <div id="slider-container">
+        <div class="row">
+            <div class="col-10">
+                <h5 class="mb-3">Confirm ticket use</h5>
+            </div>
+            <div class="col-2">
+                <button type="button" id="slider-close" class="btn-close" style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(196deg) brightness(103%) contrast(103%);"></button>
+            </div>
+        </div>
+        <p>You are about to use a ticket for <strong class="item-name"></strong>.</p>
+        <p>Swipe the slider below to confirm:</p>
+        <div id="slider-status">
+            <input type="range" id="slider-input" value="0" />
+            <h5 id="slider-confirmation" class="d-none mb-0 text-center">Thanks for redeeming your ticket for <span class="item-name"></span>!</h5>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script asp-append-version="true" src="~/js/inventory.js"></script>
+}

@@ -51,8 +51,12 @@ $modal-content-color: #333;
 @import "../node_modules/bootstrap/scss/helpers";
 
 // Custom variables go below this comment.
+$main-bg: #654f4f;
 $top-bg: #3a280b;
 $bottom-menu-bg: #2e2222;
+
+$item-bg: #f6b26b;
+$item-color: #361c01;
 
 $query-min-width: 992px;
 
@@ -61,7 +65,9 @@ $query-min-width: 992px;
 @import "top";
 @import "top-menu";
 @import "bottom-menu";
+@import "items";
 @import "shop";
+@import "inventory";
 
 .form-container {
     margin-left: auto;
