@@ -1,6 +1,6 @@
 (() => {
     const modal = new bootstrap.Modal(document.getElementById("buy-modal"));
-    const buyResponse = document.getElementById("buy-response");
+    const buyError = document.getElementById("buy-error");
     const modalItemName = document.getElementById("item-name");
     const modalItemPrice = document.getElementById("item-price");
 
@@ -16,7 +16,7 @@
             itemId = parseInt(id);
             modalItemName.innerText = name;
             modalItemPrice.innerText = price;
-            buyResponse.classList.add("d-none");
+            buyError.classList.add("d-none");
             modal.show();
         });
     });
@@ -40,7 +40,7 @@
         }
 
         const message = await response.text();
-        buyResponse.innerText = message;
-        buyResponse.classList.remove("d-none");
+        buyError.innerText = message;
+        buyError.classList.remove("d-none");
     });
 })();
