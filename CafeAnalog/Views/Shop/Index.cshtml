@@ -1,4 +1,8 @@
+@using CafeAnalog.Data
+@using Microsoft.AspNetCore.Identity
 @model List<ShopCategoryModel>
+@inject UserManager<AppUser> _userManager
+@inject SignInManager<AppUser> _signInManager
 
 @{
     ViewData["Title"] = "Shop";
@@ -9,6 +13,12 @@
 <div class="container">
     <div class="shop">
         <h1 class="items-heading">Shop</h1>
+        @if (_signInManager.IsSignedIn(User))
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            <div class="credit-balance">Credit Balance: @user.Balance.ToString("#.00") DKK</div>
+        }
 
         @foreach (var category in Model)
         {

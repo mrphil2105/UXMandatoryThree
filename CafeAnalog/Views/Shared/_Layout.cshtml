@@ -1,6 +1,5 @@
 @using CafeAnalog.Data
 @using Microsoft.AspNetCore.Identity
-@inject UserManager<AppUser> _userManager
 @inject SignInManager<AppUser> _signInManager
 
 <!DOCTYPE html>
@@ -52,9 +51,6 @@
             <div class="col-md-3 col-5 d-flex align-items-center justify-content-end">
                 @if (_signInManager.IsSignedIn(User))
                 {
-                    var user = await _userManager.GetUserAsync(User);
-
-                    <span class="me-3">Balance: @user.Balance.ToString("#.00") DKK</span>
                     <form asp-controller="Account" asp-action="Logout">
                         <button type="submit" class="btn btn-secondary">Log out</button>
                     </form>
