@@ -1,0 +1,69 @@
+[
+  {
+    "Name": "Coffee",
+    "Items": [
+      {
+        "Name": "Black Coffee",
+        "Price": 10
+      },
+      {
+        "Name": "Latte",
+        "Price": 10
+      },
+      {
+        "Name": "Espresso",
+        "Price": 12
+      },
+      {
+        "Name": "Thai",
+        "Price": 15
+      },
+      {
+        "Name": "Iced Coffee",
+        "Price": 15
+      }
+    ]
+  },
+  {
+    "Name": "Tea",
+    "Items": [
+      {
+        "Name": "Black Tea",
+        "Price": 10
+      },
+      {
+        "Name": "White Tea",
+        "Price": 10
+      },
+      {
+        "Name": "Green Tea",
+        "Price": 10
+      },
+      {
+        "Name": "Herbal Tea",
+        "Price": 10
+      },
+      {
+        "Name": "Earl Gray",
+        "Price": 10
+      }
+    ]
+  },
+  {
+    "Name": "Chocolate",
+    "Items": [
+      {
+        "Name": "Mocha",
+        "Price": 12
+      },
+      {
+        "Name": "Cocoa",
+        "Price": 10
+      },
+      {
+        "Name": "Bicerin",
+        "Price": 12
+      }
+    ]
+  }
+]

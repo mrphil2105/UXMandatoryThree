@@ -1,3 +1,4 @@
+using System.Text.Json;
 using CafeAnalog;
 using CafeAnalog.Data;
 using Microsoft.EntityFrameworkCore;
@@ -53,5 +54,20 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+
+    if (!dbContext.ShopItems.Any())
+    {
+        using var fileStream = File.OpenRead("shop-categories.json");
+        var categories = JsonSerializer.Deserialize<List<ShopCategory>>(fileStream);
+
+        dbContext.ShopCategories.AddRange(categories!);
+        dbContext.SaveChanges();
+    }
+}
 
 app.Run();
