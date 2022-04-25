@@ -9,6 +9,8 @@ public class AppUser : IdentityUser
     public string LastName { get; set; } = null!;
 
     public decimal Balance { get; set; }
+    
+    public int Score { get; set; }
 
     // Navigation properties
 
