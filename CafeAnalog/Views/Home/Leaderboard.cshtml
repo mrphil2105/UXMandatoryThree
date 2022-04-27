@@ -1,4 +1,4 @@
-@model LeaderboardModel
+@model List<RankingModel>
 
 @{
     ViewData["Title"] = "Leaderboard";
@@ -6,42 +6,15 @@
 <div class="leaderboard">
     <h1 class="leaderboard-heading">Leaderboard</h1>
     <div class="container">
-        <div class="ranking">
-            <p>
-                <span>Foo</span>
-                <span>60</span>
-            </p>
-        </div>
-        <div class="ranking">
-            <p>
-                <span>Mo</span>
-                <span>60</span>
-            </p>
-        </div>
-        <div class="ranking">
-            <p>
-                <span>Bo</span>
-                <span>60</span>
-            </p>
-        </div>
-        <div class="ranking">
-            <p>
-                <span>Co</span>
-                <span>60</span>
-            </p>
-        </div>
-        <div class="ranking">
-            <p>
-                <span>Cho</span>
-                <span>60</span>
-            </p>
-        </div>
-        <div class="ranking">
-            <p>
-                <span>Cro</span>
-                <span>60</span>
-            </p>
-        </div>
+        @foreach (var ranking in Model)
+        {
+            <div class="ranking">
+                <p>
+                    <span>@ranking.FirstName @ranking.LastName</span>
+                    <span>@ranking.Score</span>
+                </p>
+            </div>
+        }
     </div>
 </div>
 
