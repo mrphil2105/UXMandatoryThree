@@ -2,11 +2,17 @@
 $firstplace-color: #A89E45;
 $secondplace-color: #B6B6B6;
 $thirdplace-color: #855722;
+$ranking-height: 3.5rem;
 
 // All rankings except 1st, 2nd and 3rd place's color
 $rest-color: #3a280b;
 
 .leaderboard {
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
   
   .leaderboard-heading {
     text-align: center;
@@ -16,22 +22,31 @@ $rest-color: #3a280b;
     text-transform: uppercase;
   }
   
-  .rank-placement {
-    vertical-align: middle
-  }
-  
   .ranking {
     border-radius: 0.35rem;
     margin-bottom: 0.35rem;
-    font-size: 1.5rem;
-    height: 3rem;
-    line-height: 3rem;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    height: $ranking-height;
+    line-height: $ranking-height;
     padding-left: 1rem;
     padding-right: 1rem;
 
     p {
-      display: flex;
+      text-overflow: ellipsis;
+      overflow: hidden !important;
+      white-space: nowrap;
       justify-content: space-between;
+    }
+    
+    p:nth-of-type(1) {
+      max-width: 85%
+    }
+    
+    p:nth-of-type(2) {
+      margin-left: auto;
+      margin-right: 0;
     }
 
     &:nth-child(1 of .ranking) {

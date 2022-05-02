@@ -11,6 +11,8 @@ public class AppUser : IdentityUser
     public decimal Balance { get; set; }
     
     public int Score { get; set; }
+    
+    
 
     // Navigation properties
 
