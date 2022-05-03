@@ -10,18 +10,25 @@
     <div class="inventory">
         <h1 class="items-heading">Inventory</h1>
 
-        <div class="row g-0">
-            @foreach (var ticket in Model)
-            {
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="item" data-id="@ticket.Id" data-name="@ticket.Name">
-                        <span>@ticket.Name</span>
-                        <div id="ticket-count-@ticket.Id" class="ticket-count">@ticket.Count</div>
-                        <button class="btn btn-primary">Use</button>
+        @if (Model.Any())
+        {
+            <div class="row g-0">
+                @foreach (var ticket in Model)
+                {
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="item" data-id="@ticket.Id" data-name="@ticket.Name">
+                            <span>@ticket.Name</span>
+                            <div id="ticket-count-@ticket.Id" class="ticket-count">@ticket.Count</div>
+                            <button class="btn btn-primary">Use</button>
+                        </div>
                     </div>
-                </div>
-            }
-        </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>You do not have any tickets in your inventory.</p>
+        }
     </div>
 </div>
 
