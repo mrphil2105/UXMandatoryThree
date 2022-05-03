@@ -6,7 +6,6 @@ namespace CafeAnalog.Controllers;
 
 public class HomeController : Controller
 {
-    
     private readonly AppDbContext _dbContext;
 
     public HomeController(AppDbContext dbContext)
@@ -24,10 +23,11 @@ public class HomeController : Controller
         var users = await _dbContext.Users.ToListAsync();
 
         var rankings = users.Select(u =>
-                new RankingModel {Score = u.Score, FirstName = u.FirstName, LastName = u.LastName})
+                new RankingModel { Score = u.Score, FirstName = u.FirstName, LastName = u.LastName })
             .OrderByDescending(r => r.Score)
+            .Take(10)
             .ToList();
-        
+
         return View(rankings);
     }
 }
