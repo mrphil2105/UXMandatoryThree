@@ -1,0 +1,52 @@
+[
+  {
+    "FirstName": "Johnny",
+    "LastName": "Sins",
+    "Score": 9
+  },
+  {
+    "FirstName": "Berit",
+    "LastName": "Hansen",
+    "Score": 3
+  },
+  {
+    "FirstName": "Linus",
+    "LastName": "Torvalds",
+    "Score": 8
+  },
+  {
+    "FirstName": "Britta",
+    "LastName": "Jensen",
+    "Score": 21
+  },
+  {
+    "FirstName": "Fabricio",
+    "LastName": "Narcizo",
+    "Score": 42
+  },
+  {
+    "FirstName": "Jane",
+    "LastName": "Doe",
+    "Score": 6
+  },
+  {
+    "FirstName": "Elon",
+    "LastName": "Musk",
+    "Score": 31
+  },
+  {
+    "FirstName": "Henrik",
+    "LastName": "Henriksen",
+    "Score": 26
+  },
+  {
+    "FirstName": "Bastjan",
+    "LastName": "Sejberg",
+    "Score": 15
+  },
+  {
+    "FirstName": "Philip",
+    "LastName": "Mørch",
+    "Score": 16
+  }
+]

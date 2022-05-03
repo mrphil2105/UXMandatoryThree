@@ -1,6 +1,8 @@
 using System.Text.Json;
 using CafeAnalog;
 using CafeAnalog.Data;
+using CafeAnalog.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -62,12 +64,39 @@ using (var scope = app.Services.CreateScope())
 
     if (!dbContext.ShopItems.Any())
     {
-        using var fileStream = File.OpenRead("shop-categories.json");
+        await using var fileStream = File.OpenRead("shop-categories.json");
         var categories = JsonSerializer.Deserialize<List<ShopCategory>>(fileStream);
 
         dbContext.ShopCategories.AddRange(categories!);
         dbContext.SaveChanges();
     }
+
+    if (!dbContext.Users.Any())
+    {
+        await using var fileStream = File.OpenRead("dummy-users.json");
+        var rankings = JsonSerializer.Deserialize<List<RankingModel>>(fileStream);
+        var users = rankings!.Select(r =>
+            {
+                string email = StringHelper.GenerateMail();
+
+                return new AppUser
+                {
+                    FirstName = r.FirstName!,
+                    LastName = r.LastName!,
+                    UserName = email,
+                    Email = email,
+                    Score = r.Score
+                };
+            })
+            .ToList();
+
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+
+        foreach (var user in users)
+        {
+            await userManager.CreateAsync(user);
+        }
+    }
 }
 
-app.Run();
+await app.RunAsync();
