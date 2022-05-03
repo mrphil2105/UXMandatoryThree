@@ -1,4 +1,6 @@
 .leaderboard {
+    padding: 0.5rem;
+    text-align: center;
 
     .container {
         display: flex;
@@ -6,27 +8,26 @@
     }
 
     .leaderboard-heading {
-        text-align: center;
-        font-weight: 900;
         margin-top: 0.5rem;
         margin-bottom: 2rem;
+        font-weight: 900;
         text-transform: uppercase;
     }
 
     .ranking {
-        border-radius: 0.375rem;
-        margin-bottom: 0.375rem;
-        font-size: 1.25rem;
         display: flex;
         flex-direction: row;
         height: $ranking-height;
-        line-height: $ranking-height;
+        margin-bottom: 0.375rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: 0.375rem;
+        line-height: $ranking-height;
+        font-size: 1.25rem;
 
         span {
-            text-overflow: ellipsis;
             overflow: hidden !important;
+            text-overflow: ellipsis;
             white-space: nowrap;
         }
 
@@ -48,8 +49,8 @@
         }
 
         &:nth-child(3) {
-            background-color: $third-place-color;
             margin-bottom: 1.5rem;
+            background-color: $third-place-color;
         }
 
         &:nth-child(n+4) {
