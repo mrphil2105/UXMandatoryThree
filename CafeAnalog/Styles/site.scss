@@ -60,6 +60,14 @@ $item-color: #361c01;
 
 $query-min-width: 992px;
 
+// Leaderboard
+$ranking-height: 3.5rem;
+
+$first-place-color: #a89e45;
+$second-place-color: #b6b6b6;
+$third-place-color: #855722;
+$rest-color: #3a280b;
+
 @import "main";
 @import "footer";
 @import "top";

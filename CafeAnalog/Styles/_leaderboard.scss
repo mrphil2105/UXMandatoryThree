@@ -1,12 +1,3 @@
-// Colors dependent on ranking
-$firstplace-color: #A89E45;
-$secondplace-color: #B6B6B6;
-$thirdplace-color: #855722;
-$ranking-height: 3.5rem;
-
-// All rankings except 1st, 2nd and 3rd place's color
-$rest-color: #3a280b;
-
 .leaderboard {
 
     .container {
@@ -49,15 +40,15 @@ $rest-color: #3a280b;
         }
 
         &:nth-child(1) {
-            background-color: $firstplace-color;
+            background-color: $first-place-color;
         }
 
         &:nth-child(2) {
-            background-color: $secondplace-color;
+            background-color: $second-place-color;
         }
 
         &:nth-child(3) {
-            background-color: $thirdplace-color;
+            background-color: $third-place-color;
             margin-bottom: 1.5rem;
         }
 
