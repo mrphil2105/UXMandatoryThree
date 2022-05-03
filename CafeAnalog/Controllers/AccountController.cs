@@ -8,11 +8,14 @@ public class AccountController : Controller
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
+    private readonly AppDbContext _dbContext;
 
-    public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+    public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
+        AppDbContext dbContext)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _dbContext = dbContext;
     }
 
     public IActionResult Register()
@@ -75,6 +78,11 @@ public class AccountController : Controller
 
         if (result.Succeeded)
         {
+            var user = await _userManager.FindByNameAsync(model.Email);
+            user.Balance += 100; // Free money, yay!
+
+            await _dbContext.SaveChangesAsync();
+
             if (Url.IsLocalUrl(model.ReturnUrl))
             {
                 return Redirect(model.ReturnUrl);
