@@ -20,7 +20,9 @@ public class InventoryController : Controller
 
     public async Task<IActionResult> Index()
     {
+        var user = await _userManager.GetUserAsync(User);
         var tickets = await _dbContext.InventoryTickets.Include(t => t.Item)
+            .Where(t => t.UserId == user.Id)
             .ToListAsync();
 
         var ticketModels = tickets
@@ -36,9 +38,9 @@ public class InventoryController : Controller
     {
         var user = await _userManager.GetUserAsync(User);
         var ticket = await _dbContext.InventoryTickets.Include(t => t.User)
-            .SingleOrDefaultAsync(t => t.Id == ticketId);
+            .SingleOrDefaultAsync(t => t.Id == ticketId && t.UserId == user.Id);
 
-        if (ticket == null || ticket.User.Id != user.Id)
+        if (ticket == null)
         {
             return BadRequest();
         }
