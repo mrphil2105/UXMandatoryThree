@@ -33,11 +33,10 @@ $rest-color: #3a280b;
         padding-left: 1rem;
         padding-right: 1rem;
 
-        p {
+        span {
             text-overflow: ellipsis;
             overflow: hidden !important;
             white-space: nowrap;
-            justify-content: space-between;
         }
 
         span:nth-of-type(1) {
