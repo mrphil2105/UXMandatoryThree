@@ -12,5 +12,7 @@ public class InventoryTicket
 
     public ShopItem Item { get; set; } = null!;
 
+    public string UserId { get; set; } = null!;
+
     public AppUser User { get; set; } = null!;
 }
