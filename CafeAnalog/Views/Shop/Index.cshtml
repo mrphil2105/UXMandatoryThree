@@ -24,14 +24,17 @@
         {
             <h3 class="shop-category">@category.Name</h3>
             <div class="row g-0">
-                @foreach (var item in category.Items)
+                @if (category.Items is not null)
                 {
-                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                        <div class="item" data-id="@item.Id" data-name="@item.Name" data-price="@item.Price.ToString("#.00")">
-                            <span>@item.Name</span>
-                            <button class="btn btn-primary">Buy</button>
+                    foreach (var item in category.Items)
+                    {
+                        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="item" data-id="@item.Id" data-name="@item.Name" data-price="@item.Price.ToString("#.00")">
+                                <span>@item.Name</span>
+                                <button class="btn btn-primary">Buy</button>
+                            </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
         }

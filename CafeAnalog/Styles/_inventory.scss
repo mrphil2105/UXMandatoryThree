@@ -45,6 +45,7 @@
 
         input[type=range] {
             pointer-events: none;
+            -webkit-appearance: none;
             appearance: none;
             padding-left: calc(0.25rem + 1px);
             padding-right: calc(0.25rem + 1px);
@@ -59,6 +60,7 @@
             @each $thumb-selector in $thumb-selectors {
                 &::#{$thumb-selector} {
                     pointer-events: auto;
+                    -webkit-appearance: none !important;
                     appearance: none !important;
                     box-sizing: border-box;
                     width: 2rem;

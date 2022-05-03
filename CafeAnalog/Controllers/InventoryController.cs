@@ -44,6 +44,7 @@ public class InventoryController : Controller
         }
 
         ticket.Count--;
+        user.Score++;
 
         if (ticket.Count == 0)
         {
