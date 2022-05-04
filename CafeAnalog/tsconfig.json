@@ -1,24 +1,24 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "alwaysStrict": true,
-        "noImplicitAny": true,
-        "noEmitOnError": true,
-        "removeComments": true,
-        "sourceMap": true,
-        "target": "ES5",
-        "module": "CommonJS",
-        "outDir": "wwwroot/js",
-        "lib": [
-            "ES6",
-            "DOM"
-        ]
-    },
-    "include": [
-        "Scripts/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "wwwroot"
+  "compileOnSave": true,
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ES5",
+    "module": "CommonJS",
+    "outDir": "wwwroot/js",
+    "lib": [
+      "ES6",
+      "DOM"
     ]
+  },
+  "include": [
+    "Scripts/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
 }

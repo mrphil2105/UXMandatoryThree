@@ -9,6 +9,7 @@ public static class StringHelper
         Span<byte> bytes = stackalloc byte[6];
         RandomNumberGenerator.Fill(bytes);
 
-        return Convert.ToHexString(bytes).ToLowerInvariant() + "@example.com";
+        return Convert.ToHexString(bytes)
+            .ToLowerInvariant() + "@example.com";
     }
 }
